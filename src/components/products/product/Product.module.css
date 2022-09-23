@@ -1,0 +1,27 @@
+.productContainer{
+    margin: 10px;
+    /* height: 300px; */
+}
+.productImg{
+    width: 200px;
+    height: 250px;
+    border: 1px solid;
+}
+.productDescription{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    padding: 0 10px;
+}
+.productCount{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -8px;
+}
+.productCount button{
+    width: 25px;
+    height: 25px;
+    margin: 0 5px;
+    cursor: pointer;
+}
