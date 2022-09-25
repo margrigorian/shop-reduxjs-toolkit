@@ -11,8 +11,7 @@ const productSlice = createSlice({
                     url: "https://content2.rozetka.com.ua/goods/images/big/14566407.jpg",
                     count: 10,
                     maxCount: 10,
-                    price: 3,
-                    added: 1 // или нужно при клике добавоять в массив баскета?
+                    price: 3
                 },
                 {
                     id: 2,
@@ -21,8 +20,7 @@ const productSlice = createSlice({
                     url: "https://content2.rozetka.com.ua/goods/images/big/14566407.jpg",
                     count: 15,
                     maxCount: 15,
-                    price: 3.5,
-                    added: 1
+                    price: 3.5
                 },
                 {
                     id: 3,
@@ -31,8 +29,7 @@ const productSlice = createSlice({
                     url: "https://content2.rozetka.com.ua/goods/images/big/14566407.jpg",
                     count: 20,
                     maxCount: 20,
-                    price: 4,
-                    added: 1
+                    price: 4
                 },
                 {
                     id: 4,
@@ -41,8 +38,7 @@ const productSlice = createSlice({
                     url: "https://content2.rozetka.com.ua/goods/images/big/14566407.jpg",
                     count: 25,
                     maxCount: 25,
-                    price: 2.5,
-                    added: 1
+                    price: 2.5
                 },
                 {
                     id: 5,
@@ -51,8 +47,7 @@ const productSlice = createSlice({
                     url: "https://content2.rozetka.com.ua/goods/images/big/14566407.jpg",
                     count: 8,
                     maxCount: 8,
-                    price: 4.5,
-                    added: 1
+                    price: 4.5
                 },
                 {
                     id: 6,
@@ -61,8 +56,7 @@ const productSlice = createSlice({
                     url: "https://content2.rozetka.com.ua/goods/images/big/14566407.jpg",
                     count: 10,
                     maxCount: 10,
-                    price: 3,
-                    added: 1
+                    price: 3
                 },
                 {
                     id: 7,
@@ -71,8 +65,7 @@ const productSlice = createSlice({
                     url: "https://content2.rozetka.com.ua/goods/images/big/14566407.jpg",
                     count: 15,
                     maxCount: 15,
-                    price: 4,
-                    added: 1
+                    price: 4
                 },
                 {
                     id: 8,
@@ -81,8 +74,7 @@ const productSlice = createSlice({
                     url: "https://content2.rozetka.com.ua/goods/images/big/14566407.jpg",
                     count: 20,
                     maxCount: 20,
-                    price: 5,
-                    added: 1
+                    price: 5
                 },
                 {
                     id: 9,
@@ -91,8 +83,7 @@ const productSlice = createSlice({
                     url: "https://content2.rozetka.com.ua/goods/images/big/14566407.jpg",
                     count: 5,
                     maxCount: 5,
-                    price: 4,
-                    added: 1
+                    price: 4
                 },
                 {
                     id: 10,
@@ -101,15 +92,9 @@ const productSlice = createSlice({
                     url: "https://content2.rozetka.com.ua/goods/images/big/14566407.jpg",
                     count: 15,
                     maxCount: 15,
-                    price: 3.5,
-                    added: 1
+                    price: 3.5
                 }
             ]
-            // basket: {
-            //     products: [],
-            //     count: 0,
-            //     totalCost: 0
-            // }
     },
     reducers: {
         add: (state, action) => {
@@ -135,4 +120,4 @@ export default productSlice.reducer;
 
 export const {add, remove} = productSlice.actions;
 
-export const selectProducts = (state) => state;
+export const selectProducts = (state) => state.products;

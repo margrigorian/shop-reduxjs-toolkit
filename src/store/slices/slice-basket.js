@@ -16,16 +16,11 @@ const basketSlice = createSlice({
 
                 if(basketProducts === undefined) {
                     // добавление в корзину в случае отсутствия
-                    state.basket.products.push(action.payload);
+                    state.basket.products.push({...action.payload, added: 1});
                 }else {
                     // если товар уже есть корзине, изменение его количества там
                     basketProducts.added += 1;
                 }
-            
-            // количество товаров в корзине обновится
-            state.basket.count = state.basket.products.length;
-            // общая стоимость выбранных товаров
-            state.basket.totalCost = state.basket.products.reduce((sum, current) => sum + (current.added * current.price), 0);
         },
         remove: (state, action) => {
             // поиск избранного этого товара в корзине
@@ -40,11 +35,6 @@ const basketSlice = createSlice({
                     basketProducts.added -= 1;
                 }
             }
-
-            // количество товаров в корзине обновится
-            state.basket.count = state.basket.products.length;
-            // обновиться их общая стоимость
-            state.basket.totalCost = state.basket.products.reduce((sum, current) => sum + (current.added * current.price), 0)
         }
     },
 })
@@ -54,3 +44,8 @@ export default basketSlice.reducer;
 export const {add: basketAdd, remove: basketRemove} = basketSlice.actions;
 
 export const selectBasket = (state) => state.basket;
+
+export const selectDoesElementExistInBasket = (id) => (state) => {
+    return Boolean(state.basket.basket.products.find(item => item.id === id));
+}
+

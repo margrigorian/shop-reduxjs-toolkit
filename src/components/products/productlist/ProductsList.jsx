@@ -11,8 +11,7 @@ export default function Products() {
   return (
     <div className={style.container}>
       {
-        allProducts.products.products.map(item => (   // переменная.store.из slice
-            // CARDS НЕ РАБОТАЕТ 
+        allProducts.products.map(item => (   
             <Cards key={`ProductId-${item.id}`}> 
               <Product productInfo={item} />
             </Cards>
